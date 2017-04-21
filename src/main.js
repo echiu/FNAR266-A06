@@ -3,10 +3,19 @@ const THREE = require('three'); // older modules are imported like this. You sho
 const Papa = require('papaparse');
 import Framework from './framework'
 
-Papa.parse('./zipmedian.csv', {
+var zipToIncome = [];
+Papa.parse("https://echiu1997.github.io/FNAR266-A06/data/zip_median-income.csv", {
     download: true,
-    // rest of config ...
+    complete: function(results) {
+        zipToIncome = results;
+        console.log(results);
+        console.log(zipToIncome.data[0][0]);
+    }
 });
+
+var zipToLatLng = [];
+//TODO
+
 
 var Sliders = function() {
     this.lineThickness = 0.3;
