@@ -1,8 +1,12 @@
 
-// Skybox texture from: https://github.com/mrdoob/three.js/tree/master/examples/textures/cube/skybox
-
 const THREE = require('three'); // older modules are imported like this. You shouldn't have to worry about this much
+const Papa = require('papaparse');
 import Framework from './framework'
+
+Papa.parse('./zipmedian.csv', {
+    download: true,
+    // rest of config ...
+});
 
 var Sliders = function() {
     this.lineThickness = 0.3;
