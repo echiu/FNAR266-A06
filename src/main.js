@@ -9,12 +9,19 @@ Papa.parse("https://echiu1997.github.io/FNAR266-A06/data/zip_median-income.csv",
     complete: function(results) {
         zipToIncome = results;
         console.log(results);
-        console.log(zipToIncome.data[0][0]);
+        console.log(zipToIncome.data[1][0]);
     }
 });
 
 var zipToLatLng = [];
-//TODO
+Papa.parse("https://echiu1997.github.io/FNAR266-A06/data/zip_lat_lng.csv", {
+    download: true,
+    complete: function(results) {
+        zipToLatLng = results;
+        console.log(results);
+        console.log(zipToLatLng.data[1][0]);
+    }
+});
 
 
 var Sliders = function() {
