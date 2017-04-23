@@ -127,7 +127,6 @@ void main() {
 
     // amp can be changed to by slider to change magnitude of fluctuation
     //float b = amp * freq * pnoise( 0.05 * position + vec3( 2.0 * time ), vec3( 100.0 ) );
-
     float b = amp * pnoise( 0.05 * position + vec3( 2.0 * time ), vec3( 100.0 ) );
 
     float displacement = - noise + b;
