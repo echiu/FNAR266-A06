@@ -138,7 +138,7 @@ Papa.parse("https://echiu1997.github.io/FNAR266-A06/data/zip_lat_lng.csv", {
 ////////////////////////////////////////////////////////////////////////
 
 var Sliders = function() {
-    this.variance = 1.0;
+    this.variance = 2.5;
     this.lineThickness = 0.3;
     this.lineFrequency = 0.6;
 };
@@ -242,10 +242,11 @@ function onLoad(framework) {
     // setup plane for cities
     computeData("New York City", geometry1, plane1, scene, new THREE.Vector3(60, 0, 0));
     computeData("San Francisco", geometry2, plane2, scene, new THREE.Vector3(-60, 0, 0));
-
+    /*
     gui.add(sliders, 'variance', 1.0, 3.0).step(1.0).onChange(function(newVal) {
         sliders.variance = newVal;
     });
+    */
     gui.add(sliders, 'lineThickness', 0.1, 0.5).onChange(function(newVal) {
         dataMaterial.uniforms[ 'lineThickness' ].value = newVal;
     });
@@ -286,7 +287,7 @@ function computeData(city, geometry, plane, scene, position) {
                 accumulatedHeight += AePOW;
             }
             
-            geometry.vertices[i].z = 10*accumulatedHeight;
+            geometry.vertices[i].z = 5.0*accumulatedHeight;
         }
 
         plane = new THREE.Mesh(geometry, dataMaterial);
