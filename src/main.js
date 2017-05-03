@@ -45,7 +45,7 @@ var promise2 = Papa.parsePromise("https://echiu1997.github.io/FNAR266-A06/data/z
 
 var cityToBoundary = new Map();
 var promise3 = new Promise((resolve, reject) => { 
-    cityToBoundary.set("New York City", [40.472818, -74.306861, 40.935851, -73.636735]);
+    cityToBoundary.set("New York City", [40.427561, -74.306861, 40.935851, -73.577128]);
     cityToBoundary.set("San Francisco", [37.699182, -122.531662, 37.844152, -122.333223]);
     if (cityToBoundary.size == 2) {
         resolve();
@@ -138,7 +138,7 @@ Papa.parse("https://echiu1997.github.io/FNAR266-A06/data/zip_lat_lng.csv", {
 ////////////////////////////////////////////////////////////////////////
 
 var Sliders = function() {
-    this.variance = 2.5;
+    this.variance = 2.0;
     this.lineThickness = 0.3;
     this.lineFrequency = 0.6;
 };
@@ -246,13 +246,13 @@ function onLoad(framework) {
     gui.add(sliders, 'variance', 1.0, 3.0).step(1.0).onChange(function(newVal) {
         sliders.variance = newVal;
     });
-    */
     gui.add(sliders, 'lineThickness', 0.1, 0.5).onChange(function(newVal) {
         dataMaterial.uniforms[ 'lineThickness' ].value = newVal;
     });
     gui.add(sliders, 'lineFrequency', 0.1, 2.0).onChange(function(newVal) {
         dataMaterial.uniforms[ 'lineFrequency' ].value = newVal;
     });
+    */
 }
 
 function computeData(city, geometry, plane, scene, position) {

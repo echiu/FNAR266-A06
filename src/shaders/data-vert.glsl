@@ -13,7 +13,8 @@ void main() {
 
     gl_Position = projectionMatrix * modelViewMatrix * vec4( position, 1.0 );
 
-    vertPos = (modelMatrix * vec4(position, 1.0)).xyz;
+    //vertPos = (modelMatrix * vec4(position, 1.0)).xyz;
+    vertPos = position;
     vertNor = normalMatrix * normal;
 }
 
